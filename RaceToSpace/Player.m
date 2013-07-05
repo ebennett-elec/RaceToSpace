@@ -10,7 +10,7 @@
 
 @implementation Player
 
--(id)initWithImage:(UIImage *)shipImage;
+- (id)initWithImage:(UIImage *)shipImage;
 {
     self = [super init];
     if (self) {

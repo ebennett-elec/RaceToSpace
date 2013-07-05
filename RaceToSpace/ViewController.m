@@ -69,7 +69,7 @@
     [self setupPlayer];
 }
 
--(void)setupPlayer
+- (void)setupPlayer
 {
     if (!self.currentPlayer){
         //Its a new game, make current player, player 1.
@@ -90,7 +90,7 @@
     [connectedDie startRollUpdates];
 }
 
--(void) prepareForNewGame
+- (void)prepareForNewGame
 {
     //Set player scores to 0 and reset ships to start position.
     for (Player *p in self.players){
@@ -114,7 +114,7 @@
     self.currentPlayer = nil;
 }
 
--(BOOL) currentPlayerIsWinner
+- (BOOL)currentPlayerIsWinner
 {
     //check if current player has matched, or exceeded max points
     if (self.currentPlayer.score >= MaxPoints){
@@ -123,7 +123,7 @@
     return NO;
 }
 
--(void)moveCurrentPlayer:(NSInteger)rollValue
+- (void)moveCurrentPlayer:(NSInteger)rollValue
 {
     //Get UIImageView for players ship and animate p the screen.
     UIImageView *playerShip = (UIImageView *)[self.view viewWithTag:self.currentPlayer.playerNumber];
@@ -159,7 +159,7 @@
     }
 }
 
--(void)slideBackground:(NSInteger)distance
+- (void)slideBackground:(NSInteger)distance
 {
     //Check if background is able to scroll any further, if so scroll up distace value.
     if (self.spaceBackground.center.y + distance < 1024){
@@ -172,7 +172,7 @@
     }
 }
 
--(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
     //Once cancel is pressed on the alertview, prepare for new game.
     [self prepareForNewGame];
@@ -184,43 +184,11 @@
     if (roll.flags == DPRollFlagOK) {
         //Stop roll updates just to make sure wrong player doesnt mistakenly roll Dice+.
         [connectedDie stopRollUpdates];
-        int mask = 0;
-        switch (roll.result) {
-            case 1:
-            {
-                mask = 1;
-            }
-                break;
-            case 2:
-            {
-                mask = 2;
-            }
-                break;
-            case 3:
-            {
-                mask = 4;
-            }
-                break;
-            case 4:
-            {
-                mask = 8;
-            }
-                break;
-            case 5:
-            {
-                mask = 16;
-            }
-                break;
-            case 6:
-            {
-                mask = 32;
-            }
-                break;
-            default:
-                break;
-        }
+        //Convert roll result (1-6) to binary mask equivalent
+        int mask = 1 << (roll.result-1);
         //Blink the top face green showing roll result. Dice+ uses a binary mask for determinning which face, or faces to light.
         [connectedDie startBlinkAnimationWithMask:mask priority:0 r:0 g:255 b:0 onPeriod:100 cyclePeriod:50 blinkCount:5];
+        //Move player ship
         [self moveCurrentPlayer:roll.result];
         
     } else if (roll.flags == DPRollFlagTilt) {

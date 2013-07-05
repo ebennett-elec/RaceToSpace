@@ -14,6 +14,6 @@
 @property(nonatomic) NSInteger score;
 @property(nonatomic) NSInteger playerNumber;
 
--(id)initWithImage:(UIImage *)shipImage;
+- (id)initWithImage:(UIImage *)shipImage;
 
 @end
