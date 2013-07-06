@@ -15,7 +15,6 @@
 		8482216F177B577400246154 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8482216E177B577400246154 /* AppDelegate.m */; };
 		84822178177B577400246154 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84822176177B577400246154 /* MainStoryboard.storyboard */; };
 		8482217B177B577400246154 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8482217A177B577400246154 /* ViewController.m */; };
-		84822184177B598D00246154 /* DicePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84822183177B598D00246154 /* DicePlus.framework */; };
 		8482218A177B61D000246154 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84822189177B61D000246154 /* CoreBluetooth.framework */; };
 		84822190177B676800246154 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8482218F177B676800246154 /* QuartzCore.framework */; };
 		84822193177BB86200246154 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 84822192177BB86200246154 /* Player.m */; };
@@ -43,7 +42,6 @@
 		84822177177B577400246154 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		84822179177B577400246154 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		8482217A177B577400246154 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		84822183177B598D00246154 /* DicePlus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DicePlus.framework; sourceTree = "<group>"; };
 		84822189177B61D000246154 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		8482218F177B676800246154 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		84822191177BB86200246154 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
@@ -68,7 +66,6 @@
 				8482215F177B577400246154 /* UIKit.framework in Frameworks */,
 				84822161177B577400246154 /* Foundation.framework in Frameworks */,
 				84822163177B577400246154 /* CoreGraphics.framework in Frameworks */,
-				84822184177B598D00246154 /* DicePlus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,7 +94,6 @@
 			children = (
 				8482218F177B676800246154 /* QuartzCore.framework */,
 				84822189177B61D000246154 /* CoreBluetooth.framework */,
-				84822183177B598D00246154 /* DicePlus.framework */,
 				8482215E177B577400246154 /* UIKit.framework */,
 				84822160177B577400246154 /* Foundation.framework */,
 				84822162177B577400246154 /* CoreGraphics.framework */,
